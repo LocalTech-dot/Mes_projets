@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 4.2)
-project(testconfig C)
+project(6_5 C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(testconfig main.c)
+add_executable(6_5 main.c)
