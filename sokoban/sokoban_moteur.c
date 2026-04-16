@@ -145,3 +145,67 @@ void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAX
     }
     fclose(level);
 }
+
+void game_loop(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],
+                  movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES],
+                  position *p,
+                  GameAssets assets) {
+    while (!WindowShouldClose()) {
+
+        int dx = 0;
+        int dy = 0;
+
+        if (IsKeyPressed(KEY_D) || IsKeyPressed(KEY_RIGHT)) {
+            dx = 1;
+        }
+
+        if (IsKeyPressed(KEY_S) || IsKeyPressed(KEY_DOWN)) {
+            dy = 1;
+        }
+
+        if (IsKeyPressed(KEY_A) || IsKeyPressed(KEY_Q) || IsKeyPressed(KEY_LEFT)) {
+            dx = -1;
+        }
+
+        if (IsKeyPressed(KEY_W) || IsKeyPressed(KEY_Z) || IsKeyPressed(KEY_UP)) {
+            dy = -1;
+        }
+
+        if (dx != 0 || dy != 0) {
+            player_movement(carte_fond, carte_mouvante, p, dx, dy);
+        }
+
+        BeginDrawing();
+
+        ClearBackground(BLACK);
+
+
+
+        for (int y=0;y<MAXLIGNES; y = y + 1) {
+            int posY = y*32;
+            for (int x=0;x<MAXCOLONNES;x++) {
+                int posX = x*32;
+
+                DrawTexture(assets.sol, posX, posY, WHITE);
+
+
+                if (carte_fond[y][x] == MUR) {
+                    DrawTexture(assets.mur, posX, posY, WHITE);
+                }
+                if (carte_fond[y][x] == CIBLE) {
+                    DrawTexture(assets.cible, posX, posY, WHITE);
+                }
+                if (carte_mouvante[y][x] == PLAYER) {
+                    DrawTexture(assets.joueur, posX, posY, WHITE);
+                }
+                if (carte_mouvante[y][x] == CAISSE) {
+                    DrawTexture(assets.caisse, posX, posY, WHITE);
+                }
+
+            }
+        }
+
+
+        EndDrawing();
+    }
+}

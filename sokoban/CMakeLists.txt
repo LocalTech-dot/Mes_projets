@@ -7,19 +7,15 @@ add_compile_options(-Wall -Wextra -Werror)
 
 # --- GESTION DE LA PORTABILITÉ RAYLIB ---
 if(WIN32)
-
     set(RAYLIB_INCLUDE_DIR "C:/raylib/include")
     set(RAYLIB_LIBRARY "C:/raylib/lib/libraylib.a")
-
     set(SYSTEM_LIBS opengl32 gdi32 winmm)
 else()
-    # Configuration pour Linux (Standard)
-    find_package(raylib REQUIRED)
+    # Configuration pour Linux (Recherche dynamique de la librairie)
+    find_library(RAYLIB_LIBRARY raylib REQUIRED)
+    find_path(RAYLIB_INCLUDE_DIR raylib.h REQUIRED)
 
-    set(RAYLIB_INCLUDE_DIR ${RAYLIB_INCLUDE_DIRS})
-    set(RAYLIB_LIBRARY raylib)
-
-    set(SYSTEM_LIBS m pthread dl rt)
+    set(SYSTEM_LIBS m pthread dl rt X11 GL)
 endif()
 
 # --- CONSTRUCTION ---
@@ -36,3 +32,7 @@ target_link_libraries(sokoban PRIVATE
         ${RAYLIB_LIBRARY}
         ${SYSTEM_LIBS}
 )
+
+# --- COPIE DES RESSOURCES ---
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Ressources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/levels DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
