@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
   </component>
   <component name="CMakePresetLoader">{
   &quot;useNewFormat&quot;: true
@@ -17,7 +19,10 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="sokoban" targetName="sokoban" />
+      <config projectName="sokoban" targetName="glfw" folderName="GLFW3" />
+      <config projectName="sokoban" targetName="update_mappings" folderName="GLFW3" />
+      <config projectName="sokoban" targetName="uninstall" />
+      <config projectName="sokoban" targetName="raylib" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -27,23 +32,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3780dd12-486f-4e18-ae48-26d104a5e556" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../untitled/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3.2/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3_3/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3_3/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3_4/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3_4/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3_6/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3_6/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3_7/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3_7/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4_1/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4_1/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4_3/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../4_3/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6.1/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6.1/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../controle_aquisition/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../controle_aquisition/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memorize/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../memorize/main.c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/.idea/editor.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/.idea/sokoban.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/Ressources/caisse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/Ressources/cible.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/Ressources/joueur.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/Ressources/mur.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/Ressources/sol.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/levels/level1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/sokoban.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sokoban/sokoban_moteur.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sokoban.h" beforeDir="false" afterPath="$PROJECT_DIR$/sokoban.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sokoban_moteur.c" beforeDir="false" afterPath="$PROJECT_DIR$/sokoban_moteur.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +69,24 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="17" />
+    <option name="cachedIndexableFilesCount" value="52" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;LocalTech-dot&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LocalTech-dot/Mes_Projets.git&quot;,
+    &quot;accountId&quot;: &quot;1dc714b4-791f-47b0-8b1e-788bc5fe37d6&quot;
+  }
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="Ocgkr717" />
   </component>
@@ -77,72 +104,89 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="3BqZ7VtxkbrVlheyjUWkwpFDM3K" />
-  <component name="ProjectStatusUIService"><![CDATA[{
-  "uiKindId": "Widget"
-}]]></component>
+  <component name="ProjectStatusUIService">{
+  &quot;uiKindId&quot;: &quot;Widget&quot;
+}</component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "CMake Application.sokoban.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "RunOnceActivity.west.config.association.type.startup.service": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/lucien/CLionProjects/Mes_Projets/sokoban/CMakeLists.txt",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;CMake Application.sokoban.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lucie/CLionProjects/sokoban/CMakeLists.txt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="ccruntests" factoryName="Run Study Tests">
-      <module name="sokoban" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <option name="studyTest" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+}</component>
+  <component name="RunManager" selected="CMake Application.sokoban">
+    <configuration default="true" type="CMakeBoostTestRunConfigurationType" factoryName="Boost Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="glfw" type="CMakeRunConfiguration" factoryName="Application" folderName="GLFW3" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sokoban" TARGET_NAME="glfw" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="raylib" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sokoban" TARGET_NAME="raylib" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="sokoban" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sokoban" TARGET_NAME="sokoban" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="sokoban" RUN_TARGET_NAME="sokoban">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="uninstall" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sokoban" TARGET_NAME="uninstall" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="update_mappings" type="CMakeRunConfiguration" factoryName="Application" folderName="GLFW3" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sokoban" TARGET_NAME="update_mappings" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -183,6 +227,31 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="DEBUG_JUST_MY_CODE" value="true" />
       <option name="RUN_TOOL" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ccruntests" factoryName="Run Study Tests">
+      <module name="sokoban" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="DEBUG_JUST_MY_CODE" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <option name="studyTest" value="" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="tests" factoryName="Autodetect">
@@ -294,6 +363,13 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="CMake Application.glfw" />
+      <item itemvalue="CMake Application.update_mappings" />
+      <item itemvalue="CMake Application.sokoban" />
+      <item itemvalue="CMake Application.uninstall" />
+      <item itemvalue="CMake Application.raylib" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -308,6 +384,9 @@
       <workItem from="1775322407449" duration="244000" />
       <workItem from="1775322681990" duration="270000" />
       <workItem from="1776375207333" duration="4186000" />
+      <workItem from="1776428163583" duration="465000" />
+      <workItem from="1776428660155" duration="2049000" />
+      <workItem from="1776430752212" duration="60000" />
     </task>
     <servers />
   </component>

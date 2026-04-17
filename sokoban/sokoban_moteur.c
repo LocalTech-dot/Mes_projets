@@ -85,7 +85,7 @@ int verifier_victoire(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingel
 
 void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES],position *p) {
     FILE *level;
-    char lu;
+    int lu;
 
     level = fopen(nameLevel, "r");
 

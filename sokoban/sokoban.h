@@ -3,6 +3,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <raylib.h>
 
 #define TAILLE_CASE 64
 #define MAXLIGNES 10
