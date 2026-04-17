@@ -3,9 +3,9 @@ project(sokoban C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_compile_options(-Wall -Wextra)
+add_compile_options(-Wall -Wextra)#option permettant le renvoie d'une erreur lors d'utilisation de variables non déclaré entres autres
 
-# --- GESTION DE LA PORTABILITÉ RAYLIB ---
+#afin d'éviter les problèmes d'édition du code sur linux et windows, à chaque build du jeux on télécharge raylib.
 set(CMAKE_POLICY_VERSION_MINIMUM 3.5 CACHE STRING "" FORCE)
 
 if(POLICY CMP0135)
@@ -19,7 +19,6 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(raylib)
 
-# --- CONSTRUCTION ---
 
 add_executable(sokoban
         main.c
@@ -28,7 +27,6 @@ add_executable(sokoban
 )
 
 target_link_libraries(sokoban PRIVATE raylib)
-
-# --- COPIE DES RESSOURCES ---
+#ici on copie les ressources à la racine dans le dossier cmake build debug pour que le build trouve les ressources.
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/Ressources DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/levels DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

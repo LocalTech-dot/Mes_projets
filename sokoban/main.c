@@ -1,15 +1,14 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <raylib.h>
 
-#include "sokoban.h"
+#include "sokoban.h"//les fonction défini dans le moteur sont prototypé dans sokoban.h, l'appel de ce fichier permet l'appel du "moteur" du jeux
 
 int main(void) {
     staticelement carte_fond[MAXLIGNES][MAXCOLONNES];
     movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES];
     position player;
     initialiser_matrices(carte_fond, carte_mouvante);
-    charge_level("levels/level1.txt", carte_fond, carte_mouvante, &player);
+    charge_level("levels/level2.txt", carte_fond, carte_mouvante, &player);
 
     InitWindow(800, 600, "Sokoban");
     SetTargetFPS(60);

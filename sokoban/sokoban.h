@@ -1,12 +1,9 @@
 #ifndef SOKOBAN_H
 #define SOKOBAN_H
-
-#include <stdbool.h>
-#include <stdint.h>
 #include <raylib.h>
 
 #define TAILLE_CASE 64
-#define MAXLIGNES 10
+#define MAXLIGNES 12
 #define MAXCOLONNES 20
 
 typedef enum {

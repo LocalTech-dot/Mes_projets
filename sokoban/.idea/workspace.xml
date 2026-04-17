@@ -32,31 +32,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3780dd12-486f-4e18-ae48-26d104a5e556" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../untitled/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3.2/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3.2/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3_3/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3_3/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3_4/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3_4/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3_6/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3_6/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3_7/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3_7/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../4_1/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../4_1/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../4_3/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../4_3/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../6.1/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../6.1/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../controle_aquisition/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../controle_aquisition/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../desktop.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../memorize/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../memorize/main.c" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/levels/level2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Mes_Projets" beforeDir="false" afterPath="$PROJECT_DIR$/../Mes_Projets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ressources/cible.png" beforeDir="false" afterPath="$PROJECT_DIR$/Ressources/cible.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sokoban.h" beforeDir="false" afterPath="$PROJECT_DIR$/sokoban.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sokoban_moteur.c" beforeDir="false" afterPath="$PROJECT_DIR$/sokoban_moteur.c" afterDir="false" />
     </list>
@@ -69,7 +50,7 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="52" />
+    <option name="cachedIndexableFilesCount" value="1105" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
@@ -104,6 +85,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="3BqZ7VtxkbrVlheyjUWkwpFDM3K" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectStatusUIService">{
   &quot;uiKindId&quot;: &quot;Widget&quot;
 }</component>
@@ -159,11 +143,6 @@
     <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="glfw" type="CMakeRunConfiguration" factoryName="Application" folderName="GLFW3" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="sokoban" TARGET_NAME="glfw" CONFIG_NAME="Debug">
@@ -386,7 +365,8 @@
       <workItem from="1776375207333" duration="4186000" />
       <workItem from="1776428163583" duration="465000" />
       <workItem from="1776428660155" duration="2049000" />
-      <workItem from="1776430752212" duration="60000" />
+      <workItem from="1776430752212" duration="1632000" />
+      <workItem from="1776432895843" duration="1240000" />
     </task>
     <servers />
   </component>

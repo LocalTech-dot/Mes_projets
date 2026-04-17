@@ -2,7 +2,7 @@
 #include <raylib.h>
 #include "sokoban.h"
 
-void initialiser_matrices(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES]) {
+void initialiser_matrices(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES]) { //fonction qui créer mes deux matrices, fond et mouvante
     for (int y=0;y<MAXLIGNES; y= y + 1) {
         for (int x=0;x<MAXCOLONNES;x++) {
         carte_fond[y][x] = SOL;
@@ -11,7 +11,7 @@ void initialiser_matrices(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],movin
     }
 }
 
-void afficher_jeux(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES]) {
+void afficher_jeux(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES]) { // fonction qui affiche le jeux dans le terminal, n'est plus utilisé dès la v1 du jeux.
     for (int y=0;y<MAXLIGNES; y = y + 1) {
         for (int x=0;x<MAXCOLONNES;x++) {
 
@@ -38,7 +38,7 @@ void afficher_jeux(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],movingelemen
     }
 }
 
-void player_movement(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES], position *p, int dx, int dy) {
+void player_movement(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES], position *p, int dx, int dy) { //fonction qui gère la physique du personnage : la collision avec les caisses et les murs
 
     int cibleX = p->x + dx;
     int cibleY = p->y + dy;
@@ -47,7 +47,7 @@ void player_movement(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingele
         return;
     }
 
-    else if (carte_mouvante[cibleY][cibleX] == CAISSE) {
+    else if (carte_mouvante[cibleY][cibleX] == CAISSE) { //grosse condition pour gérer le déplacement de la caisse lorsque le joueur la "pousse"
         int devantX = cibleX + dx;
         int devantY = cibleY + dy;
         if (carte_mouvante[devantY][devantX] == VIDE && carte_fond[devantY][devantX] != MUR) {
@@ -70,7 +70,7 @@ void player_movement(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingele
 
 }
 
-int verifier_victoire(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES]) {
+int verifier_victoire(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES]) { //fonction de vérification de victoire qui renvoie 1 si toutes les cibles sont occupées par des caisses
     for (int y=0;y<MAXLIGNES; y = y + 1) {
         for (int x=0;x<MAXCOLONNES;x++) {
             if (carte_fond[y][x] == CIBLE) {
@@ -83,13 +83,13 @@ int verifier_victoire(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingel
     return 1;
 }
 
-void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES],position *p) {
+void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES],position *p) { //fonction qui s'occupe d'ouvrir de parcourir et de traiter les informations contenue dans le dossier "levels"
     FILE *level;
     int lu;
 
-    level = fopen(nameLevel, "r");
+    level = fopen(nameLevel, "r"); // définition du mode de lecture du fichier sur "read"
 
-    if (level == NULL) {
+    if (level == NULL) { //test permettant le renvoie d'un message en cas d'échec d'ouverture du fichier
         printf("Erreur : Niveau introuvable");
         return;
     }
@@ -101,14 +101,14 @@ void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAX
 
             lu = fgetc(level);
 
-            if (lu == EOF) {
+            if (lu == EOF) { //condition pour arreter la lecture si le fichier "lu" est en End Of File
                 fclose(level);
                 return;
             }
 
             if (lu == '\n') break;
 
-            switch (lu) {
+            switch (lu) { //définition de la variable case en fonction des donées lue dans le fichier levelx.txt
                 case '#':
                     carte_fond[y][x] = MUR;
                     carte_mouvante[y][x] = VIDE;
@@ -149,12 +149,12 @@ void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAX
 void game_loop(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],
                   movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES],
                   position *p,
-                  GameAssets assets) {
+                  GameAssets assets) { //fonction gérant toute la partie raylib du jeux, partie graphique du jeux
     while (!WindowShouldClose()) {
 
         int dx = 0;
         int dy = 0;
-
+        //ici on gère les différentes touche pressé par l'utilisateur lors de l'execution du jeux.
         if (IsKeyPressed(KEY_D) || IsKeyPressed(KEY_RIGHT)) {
             dx = 1;
         }
@@ -181,7 +181,7 @@ void game_loop(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],
 
 
 
-        for (int y=0;y<MAXLIGNES; y = y + 1) {
+        for (int y=0;y<MAXLIGNES; y = y + 1) { //toujours la même double boucle qui parcoure mes cases et qui affiche ici mes assets qui sont dans le dossier Ressources
             int posY = y*32;
             for (int x=0;x<MAXCOLONNES;x++) {
                 int posX = x*32;
