@@ -175,6 +175,9 @@ void game_loop(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],
             player_movement(carte_fond, carte_mouvante, p, dx, dy);
         }
 
+        int victoire = verifier_victoire(carte_fond, carte_mouvante);
+
+
         BeginDrawing();
 
         ClearBackground(BLACK);
@@ -205,6 +208,21 @@ void game_loop(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],
             }
         }
 
+        if (victoire == 1)   {
+            int screenx = 0;
+            int screeny = 0;
+            int fullheight = GetScreenHeight();
+            int fullwidth = GetScreenWidth();
+            int midheight = GetScreenHeight()/2;
+            int midwidth = GetScreenWidth()/2;
+
+            DrawRectangle(screenx, screeny,fullwidth , fullheight, Fade(BLACK, 0.5f));{
+            const char *victoire = "Victoire";
+            int taille = 80;
+            int taillemsg = MeasureText(victoire, taille);
+            DrawText(victoire, midwidth-taillemsg/2, midheight - taille/2, taille, GOLD);
+            }
+        }
 
         EndDrawing();
     }

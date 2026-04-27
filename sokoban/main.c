@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <raylib.h>
 
-#include "sokoban.h"//les fonction défini dans le moteur sont prototypé dans sokoban.h, l'appel de ce fichier permet l'appel du "moteur" du jeux
+#include "sokoban.h"//les fonctions définies dans le moteur sont prototypé dans sokoban.h, l'appel de ce fichier permet l'appel du "moteur" du jeux
 
 int main(void) {
     staticelement carte_fond[MAXLIGNES][MAXCOLONNES];
@@ -22,7 +22,7 @@ int main(void) {
     assets.cible = LoadTexture("Ressources/cible.png");
 
     if (assets.sol.id == 0) {
-        printf("ALERTE : Texture sol non trouvée ! Chemin actuel : %s\n", GetWorkingDirectory());
+        printf("Erreur : Texture sol non trouvée  Chemin actuel : %s\n", GetWorkingDirectory());
     }
 
     game_loop(carte_fond, carte_mouvante,&player, assets);
