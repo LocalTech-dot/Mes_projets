@@ -83,9 +83,13 @@ int verifier_victoire(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingel
     return 1;
 }
 
-void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES],position *p) { //fonction qui s'occupe d'ouvrir de parcourir et de traiter les informations contenue dans le dossier "levels"
+void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES],position *p,LevelDim *dim) {
+    //fonction qui s'occupe d'ouvrir de parcourir et de traiter les informations contenue dans le dossier "levels"
     FILE *level;
     int lu;
+
+    dim->nbLignes = 0;
+    dim->nbColonnes = 0;
 
     level = fopen(nameLevel, "r"); // définition du mode de lecture du fichier sur "read"
 
@@ -96,54 +100,67 @@ void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAX
 
 
 
-    for (int y=0;y<MAXLIGNES; y= y+ 1){
-        for (int x=0;x<MAXCOLONNES;x= x + 1) {
-
+    for (int y = 0; y < MAXLIGNES; y++) {
+        for (int x = 0; x < MAXCOLONNES; x++) {
             lu = fgetc(level);
 
-            if (lu == EOF) { //condition pour arreter la lecture si le fichier "lu" est en End Of File
+            if (lu == EOF) {
+                // On enregistre les dimensions finales avant de partir
+                if (y > 0 || x > 0) {
+                    dim->nbLignes = y + (x > 0 ? 1 : 0);
+                }
+                // Pas besoin de mettre à jour nbColonnes ici,
+                // c'est déjà fait à chaque '\n' ou géré par la logique max
+
+                for (int fillY = y; fillY < MAXLIGNES; fillY++) {
+                    int startX = (fillY == y) ? x : 0;
+                    for (int fillX = startX; fillX < MAXCOLONNES; fillX++) {
+                        carte_fond[fillY][fillX] = -1;
+                        carte_mouvante[fillY][fillX] = VIDE;
+                    }
+                }
                 fclose(level);
                 return;
             }
 
-            if (lu == '\n') break;
+            // CAS 2 : SAUT DE LIGNE
+            if (lu == '\n') {
+                // Mise à jour de la largeur maximale rencontrée
+                if (x > dim->nbColonnes) {
+                    dim->nbColonnes = x;
+                }
+                // On compte la ligne qui vient de se terminer
+                dim->nbLignes = y + 1;
 
-            switch (lu) { //définition de la variable case en fonction des donées lue dans le fichier levelx.txt
-                case '#':
-                    carte_fond[y][x] = MUR;
-                    carte_mouvante[y][x] = VIDE;
-                    break;
-
-                case ' ':
-                    carte_fond[y][x] = SOL;
-                    carte_mouvante[y][x] = VIDE;
-                    break;
-
-                case '$':
-                    carte_fond[y][x] = SOL;
-                    carte_mouvante[y][x] = CAISSE;
-                    break;
-
-                case '.':
-                    carte_fond[y][x] = CIBLE;
-                    carte_mouvante[y][x] = VIDE;
-                    break;
-
-                case '@':
-                    carte_fond[y][x] = SOL;
-                    carte_mouvante[y][x] = PLAYER;
-                    p->x = x;
-                    p->y = y;
-                    break;
-
-                default:
-                    printf("Erreur de lecture du niveau");
-                    break;
+                for (int i = x; i < MAXCOLONNES; i++) {
+                    carte_fond[y][i] = -1;
+                    carte_mouvante[y][i] = VIDE;
+                }
+                break;
             }
 
+            if (lu == '\r') {
+                x--;
+                continue;
+            }
+
+            carte_mouvante[y][x] = VIDE;
+            carte_fond[y][x] = SOL;
+
+
+            switch (lu) {
+                case '#': carte_fond[y][x] = MUR;    break;
+                case ' ': carte_fond[y][x] = SOL;    break;
+                case '$': carte_mouvante[y][x] = CAISSE; break;
+                case '.': carte_fond[y][x] = CIBLE;  break;
+                case '@':
+                    carte_mouvante[y][x] = PLAYER;
+                    p->x = x; p->y = y;
+                    break;
+                default: break;
+            }
         }
     }
-    fclose(level);
 }
 
 void game_loop(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],
@@ -189,9 +206,14 @@ void game_loop(staticelement carte_fond[MAXLIGNES][MAXCOLONNES],
             for (int x=0;x<MAXCOLONNES;x++) {
                 int posX = x*32;
 
-                DrawTexture(assets.sol, posX, posY, WHITE);
+                if (carte_fond[y][x] == SOL || carte_fond[y][x] == CIBLE ||
+                    carte_mouvante[y][x] == PLAYER || carte_mouvante[y][x] == CAISSE) {
+                    DrawTexture(assets.sol, posX, posY, WHITE);
+                }
 
-
+                if (carte_fond[y][x] == SOL) {
+                    DrawTexture(assets.sol, posX, posY, WHITE);
+                }
                 if (carte_fond[y][x] == MUR) {
                     DrawTexture(assets.mur, posX, posY, WHITE);
                 }

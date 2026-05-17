@@ -3,19 +3,27 @@
 #include <raylib.h>
 
 #define TAILLE_CASE 64
-#define MAXLIGNES 12
-#define MAXCOLONNES 20
+#define MAXLIGNES 20
+#define MAXCOLONNES 22
 
 typedef enum {
         MUR,
         SOL,
         CIBLE
     }staticelement;
+
 typedef enum {
         PLAYER,
         CAISSE,
         VIDE,
     }movingelement;
+
+typedef enum {
+    CHARGEMENT,
+    MENU,
+    JEU,
+    VICTOIRE
+} EtatJeux;
 
 typedef struct {
     int x;
@@ -30,11 +38,16 @@ typedef struct {
     Texture2D cible;
 } GameAssets;
 
+typedef struct {
+    int nbLignes;
+    int nbColonnes;
+} LevelDim;
+
 void initialiser_matrices(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES]);
 void afficher_jeux(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES]);
 void player_movement(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES], position *p, int dx, int dy);
 int verifier_victoire(staticelement fond[MAXLIGNES][MAXCOLONNES], movingelement mobile[MAXLIGNES][MAXCOLONNES]);
-void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES],position *p);
+void charge_level(const char *nameLevel, staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES],position *p,LevelDim *dim);
 void game_loop(staticelement carte_fond[MAXLIGNES][MAXCOLONNES], movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES], position *p, GameAssets assets);
 
 

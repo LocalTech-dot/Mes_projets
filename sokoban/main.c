@@ -4,13 +4,33 @@
 #include "sokoban.h"//les fonctions définies dans le moteur sont prototypé dans sokoban.h, l'appel de ce fichier permet l'appel du "moteur" du jeux
 
 int main(void) {
+
+    EtatJeux actuel = CHARGEMENT;
+    int framecounter = 0;
+    float fade = 0.01;
+    int chargelevel = 0;
+
+    while (!WindowShouldClose()) {
+        switch (actuel) {
+            case CHARGEMENT:
+                framecounter++;
+                fade = ((float)framecounter/30);
+                chargelevel = framecounter*fade;
+                if (framecounter == 180) {
+                    actuel = MENU;
+                }
+        }
+    }
+
     staticelement carte_fond[MAXLIGNES][MAXCOLONNES];
     movingelement carte_mouvante[MAXLIGNES][MAXCOLONNES];
     position player;
+    LevelDim dimensions;
+    int taillecasewindow = TAILLE_CASE/2;
     initialiser_matrices(carte_fond, carte_mouvante);
-    charge_level("levels/level2.txt", carte_fond, carte_mouvante, &player);
+    charge_level("levels/level2.txt", carte_fond, carte_mouvante, &player,&dimensions);
 
-    InitWindow(800, 600, "Sokoban");
+    InitWindow(dimensions.nbColonnes*taillecasewindow, dimensions.nbLignes*taillecasewindow, "Sokoban");
     SetTargetFPS(60);
 
     GameAssets assets;
