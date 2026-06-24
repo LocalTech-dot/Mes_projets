@@ -1,0 +1,34 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int return_price(char line[100]) {
+    char price[10];
+    int indx = 0;
+    int count = 0;
+    for (int i = 0; line[i] != '\0'; i++) {
+        if (line[i] == ',') {
+            count++;
+            continue;
+        }
+        if (count == 3 && line[i] != ',' && line[i] != ' ' && line[i] != '\n' && line[i] != '\0') {
+            price[indx] = line[i];
+            indx++;
+        }
+    }
+    price[indx] = '\0';
+    return atoi(price);
+}
+int sum_price() {
+    int sum = 0;
+    FILE* fichier = fopen("inventaire.txt", "r");
+    if (fichier == NULL) {
+        exit(0);
+    }
+    char line[100];
+
+    while(fgets(line, 100, fichier) != NULL) {
+        sum += return_price(line);
+    }
+    fclose(fichier);
+    return sum;
+}

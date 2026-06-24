@@ -1,0 +1,11 @@
+int temp;
+    int gauche = 0;
+    int droite = num -1;
+    
+    while(gauche < droite){
+        temp = arr[gauche];
+        arr[gauche] = arr[droite];
+        arr[droite] = temp;
+        gauche ++;
+        droite --;
+    }

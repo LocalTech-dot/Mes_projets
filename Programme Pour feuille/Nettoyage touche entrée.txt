@@ -1,0 +1,12 @@
+int lire(char *chaine, int longueur) {
+    char *position_entrer = NULL;
+
+    if (fgets(chaine, longueur, stdin) != NULL) {
+        position_entrer = strchr(chaine, '\n');
+        if (position_entrer != NULL) {
+            *position_entrer = '\0';
+            return 1;
+        }
+    }
+    return 0;
+}

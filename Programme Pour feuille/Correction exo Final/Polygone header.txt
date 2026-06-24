@@ -1,0 +1,10 @@
+typedef struct {
+    float x;
+    float y;
+}Point2D;
+
+typedef struct {
+    int nb_point;
+    Point2D tableau_points[10];
+}Polygone;
+

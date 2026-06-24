@@ -1,0 +1,13 @@
+char* count(char *tab) {
+    int mot = 0;
+    while (mot == 0 && *tab != '\0') {
+        if ( *tab == ' ' ) {
+            *tab =  '\0';
+            mot = 1;
+            tab++;
+        }else {
+            tab++;
+        }
+    }
+    return tab;
+}

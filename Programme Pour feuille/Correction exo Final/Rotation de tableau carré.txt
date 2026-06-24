@@ -1,0 +1,27 @@
+void rotation(int *tab, int n) {//rotation de 90° = transposition + inversion symétrique à l'axe verticale
+    int temp;
+    int temp2;
+    //transposition
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            temp = tab[i * n + j];
+            tab[i * n + j] = tab[j * n + i];
+            tab[j * n + i] = temp;
+        }
+    }
+
+    //inversion
+    for (int i = 0; i < n; i++) {
+        int gauche = 0;
+        int droite = n-1;
+        while (gauche < droite) {
+            temp2 = tab[i * n + gauche];
+            tab[i * n + gauche] = tab[i * n + droite];
+            tab[i * n + droite] = temp2;
+            gauche++;
+            droite--;
+        }
+
+    }
+
+}

@@ -1,0 +1,17 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "header.h"
+void saving(piece tab_piece[], char path[50], int taille) {
+    FILE*fichier = fopen(path, "w");
+    
+    if (fichier == NULL) {
+        exit(0);
+    }
+
+    for(int j = 0; j<taille ; j++) {
+        fprintf(fichier, "%s,%.2f,%d,%d\n", tab_piece[j].type_piece, tab_piece[j].angle, tab_piece[j].x, tab_piece[j].y);
+
+    }
+
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+#include "header.h"
+
+int exporter_flotte_csv(const char *nom_fichier, const avion *flotte, int taille){
+    FILE *rapport = fopen(nom_fichier, "w");
+    if (rapport == NULL) {
+        return -1;
+    }
+    fprintf(rapport, "ID;Modele;VitesseMax\n");
+    for (int i = 0; i < taille; i++) {
+        //fprintf(rapport, "%d;%s;%.2f", *flotte->id, *flotte->modele, *flotte->vitesse_max);
+        fprintf(rapport, "%d;%s;%.2f\n", flotte[i].id, flotte[i].modele, flotte[i].vitesse_max);
+    }
+    fclose(rapport);
+    return 0;
+}

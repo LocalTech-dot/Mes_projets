@@ -1,0 +1,39 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "header.h"
+
+void genfile(int size_polytab, Polygone polytab[size_polytab], char file[50]) {
+    FILE *fichier = fopen(file, "w");
+    if (fichier == NULL) {
+        exit(0);
+    }
+    fprintf(fichier, "Fichier de Polygone\n");
+    for (int i = 0; i < size_polytab; i++) {
+        fprintf(fichier, "%d",polytab[i].nb_point);
+        for (int j = 0; j <polytab->nb_point; j++) {
+            fprintf(fichier, "%.1f,%.1f",polytab[i].tableau_points[j].x,polytab[i].tableau_points[j].y);
+        }
+        fprintf(fichier, "\n");
+    }
+}
+
+float angle(Point2D point) {
+    //fonction supposé déjà rédiger
+}
+
+Polygone tri_poly(Polygone *polygone) {
+    int  min;
+    Point2D temp;
+    for (int i = 0; i < polygone->nb_point - 1; i++) {
+        min = i;
+        for (int j = i + 1; j < polygone->nb_point; j++) {
+            if (angle(polygone->tableau_points[j]) < angle(polygone->tableau_points[min])) {
+                min = j;
+            }
+        }
+        temp = polygone->tableau_points[min];
+        polygone->tableau_points[min] = polygone->tableau_points[i];
+        polygone->tableau_points[i] = temp;
+    }
+    return *polygone;
+}

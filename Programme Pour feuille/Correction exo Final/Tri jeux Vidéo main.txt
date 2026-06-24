@@ -1,0 +1,16 @@
+#include "header.h"
+void tri_invent(int n, object *tab) {
+    int max;
+    object temp;
+    for (int i = 0; i < n-1; i++) {
+        max = i;
+        for (int j = i + 1; j < n; j++) {
+            if (tab[j].weight > tab[max].weight) {
+                max = j;
+            }
+        }
+        temp = tab[max];
+        tab[max] = tab[i];
+        tab[i] = temp;
+    }
+}

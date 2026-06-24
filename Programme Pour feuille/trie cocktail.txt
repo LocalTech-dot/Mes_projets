@@ -1,0 +1,37 @@
+void tri_cocktail(int *tab, int taille) {
+    int echange = 1;
+    int temp;
+    int debut = 0;
+    int fin = taille - 1;
+    
+    while (echange) {
+        echange = 0;
+        
+        for (int i = debut; i < fin; i++) {
+            if (tab[i] > tab[i + 1]) {
+                temp = tab[i];
+                tab[i] = tab[i + 1];
+                tab[i + 1] = temp;
+                echange = 1;
+            }
+        }
+        
+        if (!echange) {
+            break;
+        }
+        
+        echange = 0;
+        fin--;
+        
+        for (int i = fin - 1; i >= debut; i--) {
+            if (tab[i] > tab[i + 1]) {
+                temp = tab[i];
+                tab[i] = tab[i + 1];
+                tab[i + 1] = temp;
+                echange = 1;
+            }
+        }
+        
+        debut++;
+    }
+}

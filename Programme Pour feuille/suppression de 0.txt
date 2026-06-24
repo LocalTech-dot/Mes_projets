@@ -1,0 +1,13 @@
+void tasser_tableau(int *tab, int taille) {
+    int ecrivain = 0;
+    for (int lecteur = 0; lecteur < taille; lecteur++) {
+        if (tab[lecteur] != 0) {
+            tab[ecrivain] = tab[lecteur];
+            ecrivain++;
+        }
+    }
+    while (ecrivain < taille) {
+        tab[ecrivain] = 0;
+        ecrivain++;
+    }
+}

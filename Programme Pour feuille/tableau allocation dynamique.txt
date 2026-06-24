@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+
+
+int main(void) {
+    int nombreAmis = 0;
+    int *ageAmis = NULL;
+
+    printf("Combien Avez vous d'amis ?\n");
+    scanf("%d", &nombreAmis);
+
+    if (nombreAmis > 0) {
+        ageAmis = malloc(nombreAmis * sizeof(int));
+        if (ageAmis == NULL) {
+            exit(0);
+        }
+        for (int i = 0; i < nombreAmis; i++) {
+            printf("Quel age a votre ami numero %d ? \n", i +1);
+            scanf("%d", &ageAmis[i]);
+        }
+
+        printf("Vos amis ont les ages suivants\n");
+        for (int i = 0; i < nombreAmis; i++) {
+            printf("%d ans \n", ageAmis[i]);
+        }
+    free(ageAmis);
+    }
+    return 0;
+}

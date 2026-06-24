@@ -1,0 +1,16 @@
+int count(const char *tab) {
+    int count = 0;
+    int mot = 0;
+    while (*tab != '\0') {
+        if ( *tab != ' ' && *tab != '\t'  && *tab != '\n' ) {
+            if (mot == 0) {
+                mot = 1;
+                count++;
+            }
+        }else {
+            mot = 0;
+        }
+        tab++;
+    }
+    return count;
+}

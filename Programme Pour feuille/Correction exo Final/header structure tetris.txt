@@ -1,0 +1,6 @@
+typedef struct {
+    char type_piece[30];
+    float angle;
+    int x;
+    int y;
+}piece;

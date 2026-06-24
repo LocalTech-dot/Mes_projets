@@ -1,0 +1,13 @@
+typedef enum {
+    COMMON,
+    RARE,
+    LEGEND
+}raretype;
+
+typedef struct {
+    char name[50];
+    float weight;
+    raretype type;
+    int price;
+}object;
+

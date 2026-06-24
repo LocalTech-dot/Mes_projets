@@ -1,0 +1,22 @@
+void tri_selection(int tab[], int n) {
+    int i, j, min_idx, temp;
+    
+    for (i = 0; i < n - 1; i++) {
+        // On suppose que le minimum est le premier élément non trié.
+        min_idx = i;
+        
+        // On cherche un élément encore plus petit dans le reste du tableau
+        for (j = i + 1; j<n ; j++) {
+            
+            // Si on trouve plus petit, on met à jour l'indice du minimum
+            if ( tab[j]<tab[min_idx] ) {
+                min_idx = j;
+            }
+        }
+        
+        // Echange des valeurs
+        temp = tab[min_idx];
+        tab[min_idx] = tab[i];
+        tab[i] = temp;
+    }
+}
